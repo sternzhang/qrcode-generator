@@ -1,0 +1,23 @@
+{
+    "description": "将网页上选中的文字、链接地址、当前页面的链接，生成二维码，实现电脑和手机的无缝结合。",
+    "name": "二维码生成",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "permissions":["contextMenus"],
+    "icons": {
+        "16": "icon-16.png",
+        "19": "icon-19.png",
+        "48": "icon-48.png",
+        "128": "icon-128.png"
+    },
+    "background": {
+        "scripts": ["jquery.js", "background.js"]
+    },
+    "content_scripts": [{
+        "js": ["content.js"],
+        "css": ["content.css"],
+        "matches": ["*://*/*"],
+        "run_at": "document_end"
+    }],
+    "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query"
+}
